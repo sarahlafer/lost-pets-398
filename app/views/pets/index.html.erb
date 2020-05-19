@@ -1,0 +1,13 @@
+<h1>Here are all the lost pets</h1>
+
+<ul>
+  <% @pets.each do |pet| %>
+    <li>
+      <%= link_to pet.name, pet_path(pet) %>
+      <%= link_to "Edit", edit_pet_path(pet) %>
+      <%= link_to "<i class='fas fa-trash-alt'></i>".html_safe, pet_path(pet), method: :delete, data: { confirm: "Are you sure you want to remove the pet?" } %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Add a new pet", new_pet_path %>

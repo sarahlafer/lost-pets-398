@@ -1,0 +1,16 @@
+<%#= form_for(@pet) do |f| %>
+  <%#= f.text_field :name %>
+  <%#= f.text_field :address %>
+  <%#= f.date_field :found_on %>
+  <%#= f.select :species, collection: Pet::SPECIES %>
+  <%#= f.submit %>
+<%# end %>
+
+
+<%= simple_form_for(@pet) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :found_on %>
+  <%= f.input :species, collection: Pet::SPECIES %>
+  <%= f.submit %>
+<% end %>
